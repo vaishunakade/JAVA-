@@ -1,4 +1,12 @@
 package com.containnment;
+
+import com.Assignment_on_Containment.Branch;
+import com.Assignment_on_Containment.Institute;
+import com.Assignment_on_Containment.Question;
+import com.Assignment_on_Containment.SubTopic;
+import com.Assignment_on_Containment.Subject;
+import com.Assignment_on_Containment.Topic;
+
 /* WAP to use containment for following hierarchy. Fill all data and print all
 data: (id is a integer number, name is a String)
 Class Institute id name
@@ -12,6 +20,7 @@ class Question
 {
 	int qid;
 	String qname;
+	
 	public void setQid(int id)
 	{
 		this.qid=id;
@@ -27,6 +36,11 @@ class Question
 	public String getQname()
 	{
 		return qname;
+	}
+	
+	public String toString()
+	{
+		return qid+" "+qname;
 	}
 }
 class Subtopic 
@@ -58,6 +72,10 @@ class Subtopic
 	{
 		return question;
 	}
+	public String toString()
+	{
+		return sbid+" "+sbname+" "+question;
+	}
 }
 class Topic
 {
@@ -87,6 +105,10 @@ class Topic
 	public Subtopic getSubtopic()
 	{
 		return subtopic;
+	}
+	public String toString()
+	{
+		return tid+" "+tname+" "+subtopic;
 	}
 }
 class Subject
@@ -118,6 +140,10 @@ class Subject
 	{
 		return topic;
 	}
+	public String toString()
+	{
+		return sid+" "+sname+" "+topic;
+	}
 }
 class Branch
 {
@@ -144,17 +170,56 @@ class Branch
 	{
 		return bname;
 	}
+	public Subject getSubject()
+	{
+		return subject;
 	}
+	public String toString()
+	{
+		return  bid+" "+bname+" "+subject;
+	}
+}
 class Institute
 {
 	int id;
 	String name;
 	Branch branch;
+	public void setId(int i)
+	{
+		this.id=i;
+	}
+	public void setName(String n)
+	{
+		this.name=n;
+	}
+	public void setBranch(Branch b)
+	{
+		this.branch=b;
+	}
+	public int getId()
+	{
+		return id;
+	}
+	public String getName()
+	{
+		return name;
+	}
+	public Branch getBranch()
+	{
+		return branch;
+	}
+	public String toString()
+	{
+		return id+" "+name+" "+branch;
+	}
 }
 
 public class Using_getter_setter_Inst {
 
 	public static void main(String[] args) {
+		Institute in=new Institute(1001, "JSPM", new Branch(101, "ETC", new Subject(10, "Digital Electronics", 
+				new Topic(2, "Logic Gates", new SubTopic(1, "AND gate", new Question(3, "What is AND gate?"))))));
+	System.out.println(in);
 		
 
 	}
