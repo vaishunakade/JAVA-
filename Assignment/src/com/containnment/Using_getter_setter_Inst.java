@@ -1,11 +1,5 @@
 package com.containnment;
 
-import com.Assignment_on_Containment.Branch;
-import com.Assignment_on_Containment.Institute;
-import com.Assignment_on_Containment.Question;
-import com.Assignment_on_Containment.SubTopic;
-import com.Assignment_on_Containment.Subject;
-import com.Assignment_on_Containment.Topic;
 
 /* WAP to use containment for following hierarchy. Fill all data and print all
 data: (id is a integer number, name is a String)
@@ -217,10 +211,9 @@ class Institute
 public class Using_getter_setter_Inst {
 
 	public static void main(String[] args) {
-		Institute in=new Institute(1001, "JSPM", new Branch(101, "ETC", new Subject(10, "Digital Electronics", 
-				new Topic(2, "Logic Gates", new SubTopic(1, "AND gate", new Question(3, "What is AND gate?"))))));
-	System.out.println(in);
+		Institute in=new Institute();
 		
+	
 
 	}
 
